@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm Người Dùng</title>
+</head>
+<body>
+    <h1>Thêm Người Dùng Mới</h1>
+
+    <!-- Hiển thị thông báo nếu thêm người dùng thành công -->
+    <div th:if="${param.success}" style="color:green;">
+        Người dùng đã được thêm thành công!
+    </div>
+
+    <!-- Form nhập thông tin người dùng -->
+    <form action="#" th:action="@{/user/save}" th:object="${user}" method="post">
+        <label for="name">Tên:</label><br>
+        <input type="text" id="name" name="name" th:field="*{name}" /><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" th:field="*{email}" /><br><br>
+
+        <input type="submit" value="Lưu Người Dùng" />
+    </form>
+</body>
+</html>
