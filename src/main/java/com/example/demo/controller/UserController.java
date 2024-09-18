@@ -21,11 +21,13 @@ public class UserController {
         return "index";
     }
 
-    // @PostMapping("/saveUser")
-    // public String saveUser(User user) {
-    //     userService.saveUser(user);
-    //     return "redirect:/";
-    // }
+    @GetMapping("/login")
+    public String showLogin(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+        return "login";
+    }
+    
 
     @GetMapping("/user/form")
     public String showForm(Model model) {
